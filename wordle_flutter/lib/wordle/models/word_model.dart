@@ -7,7 +7,7 @@ class Word extends Equatable {
   const Word({required this.letters});
 
   factory Word.fromString(String word) =>
-    Word(letters: word.split('').map((char) => Letter(value: char)).toList());
+      Word(letters: word.split('').map((char) => Letter(value: char)).toList());
 
   String get wordString => letters.map((letter) => letter.value).join();
 
@@ -19,7 +19,9 @@ class Word extends Equatable {
   }
 
   void removeLetter() {
-    final currentIndex = letters.lastIndexWhere((letter) => letter.value.isNotEmpty);
+    final currentIndex = letters.lastIndexWhere(
+      (letter) => letter.value.isNotEmpty,
+    );
     if (currentIndex != -1) {
       letters[currentIndex] = Letter.empty();
     }

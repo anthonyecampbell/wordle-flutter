@@ -1,0 +1,31 @@
+import 'package:flutter/material.dart';
+import 'package:wordle_flutter/wordle/models/letter_model.dart';
+
+class BoardTile extends StatelessWidget {
+  final Letter letter;
+
+  const BoardTile({
+    Key? key,
+    required this.letter,
+  }) : super(key: key);
+
+@override
+Widget build(BuildContext context) {
+  return Container(
+    margin: const EdgeInsets.all(4.0),
+    width: 48,
+    height: 48,
+    decoration: BoxDecoration(
+      border: Border.all(color: letter.borderColor),
+      color: letter.backgroundColor,
+      borderRadius: BorderRadius.circular(4.0),
+    ),
+    child: Text(
+      letter.value,
+      style: const TextStyle(
+        fontSize: 32,
+        fontWeight: FontWeight.bold,
+      ),
+    ),
+  );
+}
