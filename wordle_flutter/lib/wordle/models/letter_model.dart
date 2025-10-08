@@ -8,10 +8,7 @@ class Letter extends Equatable {
   final String value;
   final LetterStatus status;
 
-  const Letter({
-    required this.value,
-    this.status = LetterStatus.initial,
-  });
+  const Letter({required this.value, this.status = LetterStatus.initial});
 
   factory Letter.empty() => const Letter(value: '');
 
@@ -37,14 +34,8 @@ class Letter extends Equatable {
     }
   }
 
-  Letter copyWith({
-    String? value,
-    LetterStatus? status,
-  }) {
-    return Letter(
-      value: value ?? this.value,
-      status: status ?? this.status,
-    );
+  Letter copyWith({String? value, LetterStatus? status}) {
+    return Letter(value: value ?? this.value, status: status ?? this.status);
   }
 
   @override
