@@ -15,6 +15,7 @@ class BoardTile extends StatelessWidget {
       margin: const EdgeInsets.all(4.0),
       width: 48,
       height: 48,
+      alignment: Alignment.center,
       decoration: BoxDecoration(
         border: Border.all(color: letter.borderColor),
         color: letter.backgroundColor,

@@ -74,19 +74,19 @@ class _WordleScreenState extends State<WordleScreen> {
   }
 
   void _onKeyTapped(String letter) {
-    if (_gameStatus != GameStatus.playing) {
+    if (_gameStatus == GameStatus.playing) {
       setState(() => _currentWord?.addLetter(letter));
     }
   }
 
   void _onDeleteTapped() {
-    if (_gameStatus != GameStatus.playing) {
+    if (_gameStatus == GameStatus.playing) {
       setState(() => _currentWord?.removeLetter());
     }
   }
 
   Future<void> _onEnterTapped() async {
-    if (_gameStatus != GameStatus.playing &&
+    if (_gameStatus == GameStatus.playing &&
         _currentWord != null &&
         !_currentWord!.letters.contains(Letter.empty())) {
           _gameStatus = GameStatus.submitting;
