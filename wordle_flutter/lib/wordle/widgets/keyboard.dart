@@ -73,21 +73,11 @@ class _KeyboardButton extends StatelessWidget {
     required this.backgroundColor,
   }) : super(key: key);
 
-  const _KeyboardButton.delete({required VoidCallback onTap})
-      : this(
-          onTap: onTap,
-          letter: 'DEL',
-          backgroundColor: Colors.grey,
-          width: 56,
-        );
+  factory _KeyboardButton.delete({required VoidCallback onTap})
+      => _KeyboardButton(onTap: onTap, letter: 'DEL', backgroundColor: Colors.grey, width: 56);
 
-  const _KeyboardButton.enter({required VoidCallback onTap})
-      : this(
-          onTap: onTap,
-          letter: 'ENTER',
-          backgroundColor: Colors.grey,
-          width: 56,
-        );
+factory _KeyboardButton.enter({required VoidCallback onTap})
+      => _KeyboardButton(onTap: onTap, letter: 'ENTER', backgroundColor: Colors.grey, width: 56);
 
   @override
   Widget build(BuildContext context) {
